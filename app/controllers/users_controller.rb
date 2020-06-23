@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:id])
+    @user = User.new(user_params)
     if @user.save
-      #flash[:success] = "ユーザーの登録が完了しました。"
+      flash[:success] = "ユーザーの登録が完了しました。"
       redirect_to @user
     else
       render :new
